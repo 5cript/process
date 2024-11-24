@@ -28,6 +28,22 @@ add_library(boost_process
 
 add_library(Boost::process ALIAS boost_process)
 
+find_package(Boost CONFIG REQUIRED COMPONENTS
+    algorithm
+    asio
+    config
+    core
+    filesystem
+    fusion
+    iterator
+    move
+    optional
+    system
+    tokenizer
+    type_index
+    winapi
+)
+
 target_include_directories(boost_process PUBLIC include)
 target_link_libraries(boost_process
     PUBLIC
